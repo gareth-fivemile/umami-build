@@ -1,0 +1,19 @@
+# Taken from https://github.com/platformsh/platformsh-example-drupal8/blob/master/.platform/routes.yaml.
+
+# The routes of the project.
+#
+# Each route describes how an incoming URL is going
+# to be processed by Platform.sh.
+
+"https://{default}/":
+    type: upstream
+    upstream: "app:http"
+    cache:
+      enabled: true
+
+      # Base the cache on the session cookie. Ignore all other cookies.
+      cookies: ['/^SS?ESS/']
+
+"https://www.{default}/":
+    type: redirect
+    to: "https://{default}/"
