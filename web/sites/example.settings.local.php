@@ -113,3 +113,19 @@ $settings['rebuild_access'] = TRUE;
  * directory.
  */
 $settings['skip_permissions_hardening'] = TRUE;
+
+// Database settings: Default for when using DrupalVM.
+$databases['default']['default'] = array (
+  'database' => 'drupal',
+  'username' => 'drupal',
+  'password' => 'drupal',
+  'prefix' => '',
+  'host' => 'localhost',
+  'port' => '',
+  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+  'driver' => 'mysql',
+);
+
+// Default hash salt for local development only - if you wish to change it, see
+// https://gist.github.com/pfaocle/ec6c0c4a65c70f6fb1e1 for generating one with drush.
+$settings['hash_salt'] = 'tGjrSxQs_5_mM8EYoAKKFfxMrNJ5BtyHcUq5gzno_FbAC3Gy-itEId-dxHxqe-yVGk-4QDIRIA';
