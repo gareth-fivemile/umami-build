@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2238e2ab0930b929e3ce8432b01c1d7b",
+    "content-hash": "aad87218128dfc82984b8741c442ae95",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1568,6 +1568,50 @@
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
             "time": "2017-10-04T19:25:32+00:00"
+        },
+        {
+            "name": "drupal/demo_umami",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gareth-fivemile/demo_umami.git",
+                "reference": "3aa4a2553f88300f26eee66cb8db13162141dfec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gareth-fivemile/demo_umami/zipball/3aa4a2553f88300f26eee66cb8db13162141dfec",
+                "reference": "3aa4a2553f88300f26eee66cb8db13162141dfec",
+                "shasum": ""
+            },
+            "type": "drupal-profile",
+            "description": "The demo profile used for the out of the box initiative.",
+            "support": {
+                "source": "https://github.com/gareth-fivemile/demo_umami/tree/master",
+                "issues": "https://github.com/gareth-fivemile/demo_umami/issues"
+            },
+            "time": "2017-10-30T17:06:28+00:00"
+        },
+        {
+            "name": "drupal/umami",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lauriii/umami.git",
+                "reference": "c2db0e7d467e30efc99c32bbbe79d30bff1bd004"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lauriii/umami/zipball/c2db0e7d467e30efc99c32bbbe79d30bff1bd004",
+                "reference": "c2db0e7d467e30efc99c32bbbe79d30bff1bd004",
+                "shasum": ""
+            },
+            "type": "drupal-theme",
+            "description": "The theme used for the out of the box initiative.",
+            "support": {
+                "source": "https://github.com/lauriii/umami/tree/master",
+                "issues": "https://github.com/lauriii/umami/issues"
+            },
+            "time": "2017-10-30T17:22:34+00:00"
         },
         {
             "name": "drush/drush",
@@ -6056,7 +6100,10 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "drupal/umami": 20,
+        "drupal/demo_umami": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],

@@ -13,6 +13,14 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
+        },
+        {
+          "type": "vcs",
+          "url":  "https://github.com/lauriii/umami"
+        },
+        {
+          "type": "vcs",
+          "url":  "https://github.com/gareth-fivemile/demo_umami"
         }
     ],
     "require": {
@@ -23,7 +31,9 @@
         "drupal/core": "~8.0",
         "drush/drush": "~8.0|^9.0.0-beta7",
         "webflo/drupal-finder": "^1.0.0",
-        "webmozart/path-util": "^2.3"
+        "webmozart/path-util": "^2.3",
+        "drupal/umami": "dev-master",
+        "drupal/demo_umami": "dev-master"
     },
     "require-dev": {
         "behat/mink": "~1.7",
