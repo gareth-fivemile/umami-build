@@ -43,10 +43,7 @@ hooks:
     # The deploy hook runs after your application has been deployed and started.
     deploy: |
       cd web
-      drush -y cache-rebuild
-      drush -y updatedb
-      drush -y config-import
-      drush -y entup
+      ../vendor/bin/drush si demo_umami -y --account-pass=nKraDzZq8ZUq747Bn9PaXAB83 --account-mail="gareth@fivemilemedia.co.uk"
 # The configuration of app when it is exposed to the web.
 web:
     # Specific parameters for different URL prefixes.
@@ -103,4 +100,4 @@ web:
 crons:
     drupal:
         spec: '0 */6 * * *'
-        cmd: 'cd web ; drush core-cron'
+        cmd: 'cd web ; ../vendor/bin/drush core-cron'
