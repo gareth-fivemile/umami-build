@@ -1679,12 +1679,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lauriii/umami.git",
-                "reference": "c2db0e7d467e30efc99c32bbbe79d30bff1bd004"
+                "reference": "4ca129012ced88c749df1a341051e5bc4a29aa04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lauriii/umami/zipball/c2db0e7d467e30efc99c32bbbe79d30bff1bd004",
-                "reference": "c2db0e7d467e30efc99c32bbbe79d30bff1bd004",
+                "url": "https://api.github.com/repos/lauriii/umami/zipball/4ca129012ced88c749df1a341051e5bc4a29aa04",
+                "reference": "4ca129012ced88c749df1a341051e5bc4a29aa04",
                 "shasum": ""
             },
             "type": "drupal-theme",
@@ -1693,7 +1693,7 @@
                 "source": "https://github.com/lauriii/umami/tree/master",
                 "issues": "https://github.com/lauriii/umami/issues"
             },
-            "time": "2017-10-30T17:22:34+00:00"
+            "time": "2017-11-01T10:01:08+00:00"
         },
         {
             "name": "drush/drush",
