@@ -16,6 +16,9 @@ $settings['container_yamls'][] = $app_root . '/' . $site_path . '/services.yml';
 $settings['file_scan_ignore_directories'] = [
   'node_modules',
   'bower_components',
+  // @TODO: Remove the 'components' folder from being excluded - this is temporary
+  // whilst the umami theme is currently just a styleguide.
+  'components',
 ];
 // The hash_salt should be a unique random value for each application.
 // If left unset, the settings.platformsh.php file will attempt to provide one.

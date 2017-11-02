@@ -4,6 +4,11 @@
 # 'example.settings.local.php' file, which sits next to this file.
 parameters:
   http.response.debug_cacheability_headers: true
+  twig.config:
+    debug: true
+    auto_reload: true # reloads the twig files on every request, so no drush cache clear is required
+    cache: false # No twig internal cache, important: check the example.settings.loca.php to fully fully disable the twig cache
+
 services:
   cache.backend.null:
     class: Drupal\Core\Cache\NullBackendFactory
