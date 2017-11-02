@@ -49,6 +49,7 @@ hooks:
       ../vendor/bin/drush genc 10 --types=article
       ../vendor/bin/drush genc 10 --types=recipe
       ../vendor/bin/drush pmu devel_generate -y
+      ../vendor/bin/drush cron
 # The configuration of app when it is exposed to the web.
 web:
     # Specific parameters for different URL prefixes.
