@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7a49f64dee7bcc77820d6987e9b984b0",
+    "content-hash": "85db73276fcbd06a3d061015539a50b4",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1675,7 +1675,7 @@
         },
         {
             "name": "drupal/umami",
-            "version": "dev-master",
+            "version": "dev-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/lauriii/umami.git",
