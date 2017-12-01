@@ -1575,12 +1575,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/gareth-fivemile/demo_umami.git",
-                "reference": "c6ba4ea81b2b3ecec79dd7f4dba154066c517a70"
+                "reference": "e08a5555c260e5f465814dff399bac7be93c736a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gareth-fivemile/demo_umami/zipball/c6ba4ea81b2b3ecec79dd7f4dba154066c517a70",
-                "reference": "c6ba4ea81b2b3ecec79dd7f4dba154066c517a70",
+                "url": "https://api.github.com/repos/gareth-fivemile/demo_umami/zipball/e08a5555c260e5f465814dff399bac7be93c736a",
+                "reference": "e08a5555c260e5f465814dff399bac7be93c736a",
                 "shasum": ""
             },
             "type": "drupal-profile",
@@ -1589,7 +1589,7 @@
                 "source": "https://github.com/gareth-fivemile/demo_umami/tree/master",
                 "issues": "https://github.com/gareth-fivemile/demo_umami/issues"
             },
-            "time": "2017-11-23T22:29:39+00:00"
+            "time": "2017-11-28T16:31:16+00:00"
         },
         {
             "name": "drupal/devel",
@@ -1679,12 +1679,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lauriii/umami.git",
-                "reference": "5e3178ebfd8ec2b8fbf09429a4885980921b3e93"
+                "reference": "993b1cb6860f88ade6966427e99c81002751a2ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lauriii/umami/zipball/5e3178ebfd8ec2b8fbf09429a4885980921b3e93",
-                "reference": "5e3178ebfd8ec2b8fbf09429a4885980921b3e93",
+                "url": "https://api.github.com/repos/lauriii/umami/zipball/993b1cb6860f88ade6966427e99c81002751a2ec",
+                "reference": "993b1cb6860f88ade6966427e99c81002751a2ec",
                 "shasum": ""
             },
             "type": "drupal-theme",
@@ -1693,7 +1693,7 @@
                 "source": "https://github.com/lauriii/umami/tree/dev",
                 "issues": "https://github.com/lauriii/umami/issues"
             },
-            "time": "2017-11-24T22:28:10+00:00"
+            "time": "2017-12-01T18:45:37+00:00"
         },
         {
             "name": "drush/drush",
