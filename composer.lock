@@ -1575,12 +1575,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/gareth-fivemile/demo_umami.git",
-                "reference": "add81eef328aac514133162f7fd3f75579f0e67d"
+                "reference": "9a5dbe99e29305499ff9505710d1ae8a99f0d40a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gareth-fivemile/demo_umami/zipball/add81eef328aac514133162f7fd3f75579f0e67d",
-                "reference": "add81eef328aac514133162f7fd3f75579f0e67d",
+                "url": "https://api.github.com/repos/gareth-fivemile/demo_umami/zipball/9a5dbe99e29305499ff9505710d1ae8a99f0d40a",
+                "reference": "9a5dbe99e29305499ff9505710d1ae8a99f0d40a",
                 "shasum": ""
             },
             "type": "drupal-profile",
@@ -1589,7 +1589,7 @@
                 "source": "https://github.com/gareth-fivemile/demo_umami/tree/master",
                 "issues": "https://github.com/gareth-fivemile/demo_umami/issues"
             },
-            "time": "2017-12-13T20:21:56+00:00"
+            "time": "2017-12-19T12:45:55+00:00"
         },
         {
             "name": "drupal/devel",
