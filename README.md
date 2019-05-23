@@ -10,3 +10,4 @@ cd web
 drush si demo_umami --account-pass=pass --account-mail="your-email@example.com"
 drush en demo_umami_content -y
 ```
+
