@@ -45,6 +45,7 @@ hooks:
       cd web
       ../vendor/bin/drush si demo_umami -y --account-pass=nKraDzZq8ZUq747Bn9PaXAB83 --account-mail="gareth@fivemilemedia.co.uk"
       ../vendor/bin/drush cron
+      ../vendor/bin/drush status > sites/default/files/drush-status.txt
 # The configuration of app when it is exposed to the web.
 web:
     # Specific parameters for different URL prefixes.
