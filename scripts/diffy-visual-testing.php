@@ -30,7 +30,7 @@ echo 'Diffy: Token received (' . strlen($token) . ' chars long)' . PHP_EOL;
 
 if ($branch == 'master') {
   $screenshots_id = triggerScreenshotJobProduction($token, $project_id);
-  echo 'Diffy: Screenshots from master branch started. See' . DIFFY_API_BASE_URL . '/#/snapshots/' . $screenshots_id . PHP_EOL;
+  echo 'Diffy: Screenshots from master branch started. See: ' . DIFFY_API_BASE_URL . '/#/snapshots/' . $screenshots_id . PHP_EOL;
 }
 else {
   if (!isset($urls[$branch])) {
@@ -41,6 +41,7 @@ else {
   $screenshot_production_id = getLatestScreenshotFromProduction($token, $project_id);
   $screenshot_branch_id = triggerScreenshotJobBranch($token, $project_id, $urls[$branch]);
   $diff_id = triggerCompareJob($token, $project_id, $screenshot_production_id, $screenshot_branch_id);
+  updateDiffName($token, $diff_id, $branch);
 
   echo 'Diffy: Screenshots and comparison started. Check the diff: ' . DIFFY_API_BASE_URL . '/#/diffs/' . $diff_id;
 }
@@ -49,6 +50,29 @@ else {
 /**
  * Helper functions.
  */
+
+function updateDiffName($token, $diff_id, $branch) {
+  $curl = curl_init();
+  $authorization = 'Authorization: Bearer ' . $token;
+  $curlOptions = array(
+    CURLOPT_URL => rtrim(DIFFY_API_BASE_URL, '/') . '/api/diffs/' . $diff_id,
+    CURLOPT_HTTPHEADER => array('Content-Type: application/json' , $authorization ),
+    CURLOPT_CUSTOMREQUEST => 'PUT',
+    CURLOPT_RETURNTRANSFER => 1,
+    CURLOPT_POSTFIELDS => json_encode(array(
+      'name' => $branch,
+    ))
+  );
+  curl_setopt_array($curl, $curlOptions);
+  $curlResponse = json_decode(curl_exec($curl));
+  $curlErrorMsg = curl_error($curl);
+  $curlErrno= curl_errno($curl);
+  curl_close($curl);
+  if ($curlErrorMsg) {
+    echo 'Diffy: Error changing diff name: ' . $diff_id . ' to ' . $branch . '. Error: ' . $curlErrno . ': ' . $curlErrorMsg . PHP_EOL;
+    exit;
+  }
+}
 
 function triggerCompareJob($token, $project_id, $screenshot_production_id, $screenshot_branch_id) {
   $curl = curl_init();
