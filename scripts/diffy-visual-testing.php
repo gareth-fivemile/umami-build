@@ -11,6 +11,7 @@
  */
 
 define("DIFFY_API_BASE_URL", "https://app.diffy.website");
+define('DEBUG', TRUE);
 
 $PLATFORM_VARIABLES = json_decode(base64_decode(getenv('PLATFORM_VARIABLES')), TRUE);
 
@@ -39,7 +40,9 @@ else {
   }
 
   $screenshot_production_id = getLatestScreenshotFromProduction($token, $project_id);
+  echo 'Diffy: Latest production screenshots set found (' . $screenshot_production_id . ')' . PHP_EOL;
   $screenshot_branch_id = triggerScreenshotJobBranch($token, $project_id, $urls[$branch]);
+  echo 'Diffy: Started taking screenshots from branch (' . $screenshot_branch_id . ')' . PHP_EOL;
   $diff_id = triggerCompareJob($token, $project_id, $screenshot_production_id, $screenshot_branch_id);
   updateDiffName($token, $diff_id, $branch);
 
@@ -93,8 +96,11 @@ function triggerCompareJob($token, $project_id, $screenshot_production_id, $scre
   $curlErrno= curl_errno($curl);
   curl_close($curl);
   if ($curlErrorMsg) {
-    echo 'Diffy: Error triggering compare job. Screenshot ids are: ' .$screenshot_production_id . ' and ' . $screenshot_branch_id . '. Error: ' . $curlErrno . ': ' . $curlErrorMsg . PHP_EOL;
+    echo 'Diffy: Error triggering compare job. Screenshot ids are: ' . $screenshot_production_id . ' and ' . $screenshot_branch_id . '. Error: ' . $curlErrno . ': ' . $curlErrorMsg . PHP_EOL;
     exit;
+  }
+  if (DEBUG) {
+    var_export($curlResponse);
   }
   return (int) $curlResponse;
 }
