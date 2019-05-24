@@ -11,7 +11,7 @@
  */
 
 define("DIFFY_API_BASE_URL", "https://app.diffy.website");
-define('DEBUG', TRUE);
+define('DEBUG', FALSE);
 
 $PLATFORM_VARIABLES = json_decode(base64_decode(getenv('PLATFORM_VARIABLES')), TRUE);
 
@@ -81,7 +81,7 @@ function triggerCompareJob($token, $project_id, $screenshot_production_id, $scre
   $curl = curl_init();
   $authorization = 'Authorization: Bearer ' . $token;
   $curlOptions = array(
-    CURLOPT_URL => rtrim(DIFFY_API_BASE_URL, '/') . '/api/projects/' . $project_id . '/screenshots',
+    CURLOPT_URL => rtrim(DIFFY_API_BASE_URL, '/') . '/api/projects/' . $project_id . '/diffs',
     CURLOPT_HTTPHEADER => array('Content-Type: application/json' , $authorization ),
     CURLOPT_POST => 1,
     CURLOPT_RETURNTRANSFER => 1,
