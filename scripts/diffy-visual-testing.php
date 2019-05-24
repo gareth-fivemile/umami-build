@@ -22,6 +22,8 @@ $project_id = $PLATFORM_VARIABLES['DIFFY_PROJECT_ID'];
 // What is URL of each branch.
 $urls = [
   'test-environment-1' => 'https://test-environment-1-5n57owi-acn64pnrbyo7q.eu.platform.sh',
+  'test-environment-2' => 'http://test-environment-2-bt6dcra-acn64pnrbyo7q.eu.platform.sh',
+  'test-environment-3' => 'http://test-environment-3-sop7gpy-acn64pnrbyo7q.eu.platform.sh/',
 ];
 
 // First we need to get Bearer token for accessing API's.
