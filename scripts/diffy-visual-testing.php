@@ -54,7 +54,7 @@ function triggerCompareJob($token, $project_id, $screenshot_production_id, $scre
   $curl = curl_init();
   $authorization = 'Authorization: Bearer ' . $token;
   $curlOptions = array(
-    CURLOPT_URL => rtrim(SITE_URL, '/') . '/api/projects/' . $project_id . '/screenshots',
+    CURLOPT_URL => rtrim(DIFFY_API_BASE_URL, '/') . '/api/projects/' . $project_id . '/screenshots',
     CURLOPT_HTTPHEADER => array('Content-Type: application/json' , $authorization ),
     CURLOPT_POST => 1,
     CURLOPT_RETURNTRANSFER => 1,
@@ -79,7 +79,7 @@ function triggerScreenshotJobBranch($token, $project_id, $url) {
   $curl = curl_init();
   $authorization = 'Authorization: Bearer ' . $token;
   $curlOptions = array(
-    CURLOPT_URL => rtrim(SITE_URL, '/') . '/api/projects/' . $project_id . '/screenshots',
+    CURLOPT_URL => rtrim(DIFFY_API_BASE_URL, '/') . '/api/projects/' . $project_id . '/screenshots',
     CURLOPT_HTTPHEADER => array('Content-Type: application/json' , $authorization ),
     CURLOPT_POST => 1,
     CURLOPT_RETURNTRANSFER => 1,
@@ -109,7 +109,7 @@ function getLatestScreenshotFromProduction($token, $project_id, $page = 0) {
   $curl = curl_init();
   $authorization = 'Authorization: Bearer ' . $token;
   $curlOptions = array(
-    CURLOPT_URL => rtrim(SITE_URL, '/') . '/api/projects/' . $project_id . '/screenshots?page=' . $page,
+    CURLOPT_URL => rtrim(DIFFY_API_BASE_URL, '/') . '/api/projects/' . $project_id . '/screenshots?page=' . $page,
     CURLOPT_HTTPHEADER => array('Content-Type: application/json' , $authorization ),
     CURLOPT_RETURNTRANSFER => 1
   );
@@ -142,7 +142,7 @@ function triggerScreenshotJobProduction($token, $project_id) {
   $curl = curl_init();
   $authorization = 'Authorization: Bearer ' . $token;
   $curlOptions = array(
-    CURLOPT_URL => rtrim(SITE_URL, '/') . '/api/projects/' . $project_id . '/screenshots',
+    CURLOPT_URL => rtrim(DIFFY_API_BASE_URL, '/') . '/api/projects/' . $project_id . '/screenshots',
     CURLOPT_HTTPHEADER => array('Content-Type: application/json' , $authorization ),
     CURLOPT_POST => 1,
     CURLOPT_RETURNTRANSFER => 1,
