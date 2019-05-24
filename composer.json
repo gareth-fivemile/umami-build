@@ -28,10 +28,8 @@
         "cweagans/composer-patches": "^1.6",
         "drupal-composer/drupal-scaffold": "^2.2",
         "drupal/console": "^1.0.1",
-        "drupal/core": "^8.7",
-        "drupal/demo_umami": "dev-master",
+        "drupal/core": "8.7.x-dev",
         "drupal/devel": "^1.2",
-        "drupal/umami": "dev-dev",
         "drush/drush": "~8.0|^9.0.0-beta7",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3"
@@ -81,6 +79,11 @@
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "drush/contrib/{$name}": ["type:drupal-drush"]
+        },
+        "enable-patching": true,
+        "patches": {
+            "drupal/core": {
+            }
         }
     }
 }
