@@ -83,6 +83,7 @@
         "enable-patching": true,
         "patches": {
             "drupal/core": {
+                "Fix styling of Umami for layout builder": "https://www.drupal.org/files/issues/2019-04-24/ootb-layout-builder-buttons-checkbox-3044366-38.patch"
             }
         }
     }
