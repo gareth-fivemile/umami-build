@@ -18,12 +18,13 @@ $PLATFORM_VARIABLES = json_decode(base64_decode(getenv('PLATFORM_VARIABLES')), T
 $branch = $_ENV['PLATFORM_BRANCH'];
 $key = $PLATFORM_VARIABLES['DIFFY_ACCESS_TOKEN'];
 $project_id = $PLATFORM_VARIABLES['DIFFY_PROJECT_ID'];
+$basic_auth_pass = $PLATFORM_VARIABLES['SHIELDPASS'];
 
 // What is URL of each branch.
 $urls = [
-  'test-environment-1' => 'https://test-environment-1-5n57owi-acn64pnrbyo7q.eu.platform.sh',
-  'test-environment-2' => 'http://test-environment-2-bt6dcra-acn64pnrbyo7q.eu.platform.sh',
-  'test-environment-3' => 'http://test-environment-3-sop7gpy-acn64pnrbyo7q.eu.platform.sh/',
+  'test-environment-1' => 'https://admin:' . $basic_auth_pass . '@test-environment-1-5n57owi-acn64pnrbyo7q.eu.platform.sh',
+  'test-environment-2' => 'https://admin:' . $basic_auth_pass . '@test-environment-2-bt6dcra-acn64pnrbyo7q.eu.platform.sh',
+  'test-environment-3' => 'https://admin:' . $basic_auth_pass . '@test-environment-3-sop7gpy-acn64pnrbyo7q.eu.platform.sh/',
 ];
 
 // First we need to get Bearer token for accessing API's.
