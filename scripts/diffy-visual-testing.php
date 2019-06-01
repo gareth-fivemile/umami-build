@@ -17,7 +17,7 @@ $PLATFORM_VARIABLES = json_decode(base64_decode(getenv('PLATFORM_VARIABLES')), T
 
 $branch = $_ENV['PLATFORM_BRANCH'];
 $key = $PLATFORM_VARIABLES['DIFFY_ACCESS_TOKEN'];
-$project_id = $PLATFORM_VARIABLES['DIFFY_PROJECT_ID'];
+$project_ids = $PLATFORM_VARIABLES['DIFFY_PROJECT_ID'];
 $basic_auth_user = $PLATFORM_VARIABLES['BASICAUTH_USER'];
 $basic_auth_pass = $PLATFORM_VARIABLES['BASICAUTH_PASS'];
 
@@ -34,8 +34,10 @@ $token = initiateToken($key);
 echo 'Diffy: Token received (' . strlen($token) . ' chars long)' . PHP_EOL;
 
 if ($branch == 'master') {
-  $screenshots_id = triggerScreenshotJobProduction($token, $project_id);
-  echo 'Diffy: Screenshots from master branch started. See: ' . DIFFY_API_BASE_URL . '/#/snapshots/' . $screenshots_id . PHP_EOL;
+  foreach (explode(',', $project_ids) as $project_id) {
+    $screenshots_id = triggerScreenshotJobProduction($token, $project_id);
+    echo 'Diffy: Screenshots from master branch started. See: ' . DIFFY_API_BASE_URL . '/#/snapshots/' . $screenshots_id . PHP_EOL;
+  }
 }
 else {
   if (!isset($urls[$branch])) {
@@ -43,14 +45,16 @@ else {
     exit;
   }
 
-  $screenshot_production_id = getLatestScreenshotFromProduction($token, $project_id);
-  echo 'Diffy: Latest production screenshots set found (' . $screenshot_production_id . ')' . PHP_EOL;
-  $screenshot_branch_id = triggerScreenshotJobBranch($token, $project_id, $urls[$branch]);
-  echo 'Diffy: Started taking screenshots from branch (' . $screenshot_branch_id . ')' . PHP_EOL;
-  $diff_id = triggerCompareJob($token, $project_id, $screenshot_production_id, $screenshot_branch_id);
-  updateDiffName($token, $diff_id, $branch);
+  foreach (explode(',', $project_ids) as $project_id) {
+    $screenshot_production_id = getLatestScreenshotFromProduction($token, $project_id);
+    echo 'Diffy: Latest production screenshots set found (' . $screenshot_production_id . ')' . PHP_EOL;
+    $screenshot_branch_id = triggerScreenshotJobBranch($token, $project_id, $urls[$branch]);
+    echo 'Diffy: Started taking screenshots from branch (' . $screenshot_branch_id . ')' . PHP_EOL;
+    $diff_id = triggerCompareJob($token, $project_id, $screenshot_production_id, $screenshot_branch_id);
+    updateDiffName($token, $diff_id, $branch);
 
-  echo 'Diffy: Screenshots and comparison started. Check the diff: ' . DIFFY_API_BASE_URL . '/#/diffs/' . $diff_id;
+    echo 'Diffy: Screenshots and comparison started. Check the diff: ' . DIFFY_API_BASE_URL . '/#/diffs/' . $diff_id;
+  }
 }
 
 
