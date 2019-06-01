@@ -45,9 +45,6 @@ hooks:
       cd web
       ../vendor/bin/drush si demo_umami -y --account-pass=nKraDzZq8ZUq747Bn9PaXAB83 --account-mail="gareth@fivemilemedia.co.uk"
       ../vendor/bin/drush cron
-      ../vendor/bin/drush pm-enable shield -y
-      ../vendor/bin/drush config-set -y shield.settings credentials.shield.user admin
-      eval "../vendor/bin/drush config-set -y shield.settings credentials.shield.pass $SHIELDPASS"
       ../vendor/bin/drush status > sites/default/files/drush-status.txt
       php ../scripts/diffy-visual-testing.php
 # The configuration of app when it is exposed to the web.
